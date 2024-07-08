@@ -160,6 +160,7 @@
   justify-content: center;
   z-index: 1000;
   font-size: smaller;
+  margin-top: auto;
 }
 
 .icon-container {

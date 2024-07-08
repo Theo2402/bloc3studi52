@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import '../css/AdminHeader.css';
+import olympicRings from '../images/game1.png';
 
 const Header = ({ setPage }) => {
   const { logout } = useAuth();
@@ -14,7 +15,7 @@ const Header = ({ setPage }) => {
     <header className="admin-header">
       <div className="header-content">
         <div className="logo">
-          <img src="path_to_logo.png" alt="App Logo" />
+          <img src={olympicRings} alt="logo" />
           <h1>Admin Dashboard</h1>
         </div>
         <div className={`navigation ${isMenuOpen ? 'open' : ''}`}>

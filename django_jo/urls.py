@@ -38,10 +38,8 @@ urlpatterns = [
     path('api/register/', RegisterUserAPIView.as_view(), name='register'), 
     path('', TemplateView.as_view(template_name='index.html')),
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
-    #re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
      
-#urlpatterns += [re_path(r'^.*$', TemplateView.as_view(template_name='index.html'))]
-
 
 

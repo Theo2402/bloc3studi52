@@ -233,4 +233,4 @@ HTTPS = config('HTTPS', default=False, cast=bool)
 
 django_heroku.settings(locals())
 
-DEBUG = True
+#DEBUG = True

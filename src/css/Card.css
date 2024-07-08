@@ -1,0 +1,42 @@
+
+.event-card {
+  margin: 10px;
+  width: 300px;  
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f7f7f7;
+  flex-shrink: 0;  
+}
+
+.event-card:hover {
+  transform: scale(1.05);  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;  
+  box-sizing: border-box; 
+}
+
+.title-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.event-icon {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.descriptionCard {
+  margin-top: 20px;
+  overflow-y: auto;
+  flex-grow: 1;  
+  max-height: calc(100% - 80px);  
+}

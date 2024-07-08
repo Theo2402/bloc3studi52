@@ -1,0 +1,100 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.profile-container {
+  flex: 1;
+  width: 500px;
+  margin: 40px auto; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outer-card {
+  width: 100%;
+  max-width: 1500px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.logout-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 80px;
+  
+}
+
+.logout-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.my-tickets-section {
+  width: 100%;
+  text-align: center;
+}
+
+.ticket-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-info {
+  flex: 1;
+  text-align: left;
+}
+
+.ticket-info h3 {
+  margin: 0 0 10px 0;
+}
+
+.ticket-info p {
+  margin: 5px 0;
+}
+
+.ticket-qr {
+  margin-left: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .left-text,
+.footer .right-text {
+  display: inline-block;
+  width: 33%;
+}
+
+.footer .icon-container {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+}
+
+.footer .icon {
+  width: 40px;
+  height: auto;
+}

@@ -1,0 +1,37 @@
+.admin-chart-container {
+    margin-top: 40px;
+    height: 600px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 100px;
+  }
+
+  .title-ticket {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  
+  @media (max-width: 1200px) {
+    .admin-chart-container {
+      height: 600px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-chart-container {
+      height: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-chart-container {
+      height: 400px;
+    }
+  }
+  
+  .admin-chart-container canvas {
+    flex-grow: 1;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  

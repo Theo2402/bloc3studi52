@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "./static/css/main.e8ba804f.css",
+    "main.js": "./static/js/main.d6a3048d.js",
+    "static/js/453.2295a44f.chunk.js": "./static/js/453.2295a44f.chunk.js",
+    "static/media/background.avif": "./static/media/background.aab4c273430d74984dfc.avif",
+    "static/media/voile.jpg": "./static/media/voile.3c21276acbbbe0e2947b.jpg",
+    "static/media/judo.png": "./static/media/judo.33c4d66af1f9e00209b1.png",
+    "static/media/basketball.png": "./static/media/basketball.4ba6c2836b5b1af24687.png",
+    "static/media/aviron.png": "./static/media/aviron.dfa0d66e5caa0277b0c4.png",
+    "static/media/voile.png": "./static/media/voile.1138a0f66658cd23461d.png",
+    "static/media/waterpolo.png": "./static/media/waterpolo.13cf00d4f2c71d6f7ed6.png",
+    "static/media/tennis.png": "./static/media/tennis.b820f34bb04c2e54f32a.png",
+    "static/media/handball.png": "./static/media/handball.93c77bd6e735660c98a8.png",
+    "static/media/natation.png": "./static/media/natation.85896be791ff7db54363.png",
+    "static/media/escrime.png": "./static/media/escrime.3b82a524eac68c8c5a84.png",
+    "static/media/golf.png": "./static/media/golf.48fb1b64060a99219655.png",
+    "static/media/escrime.jpg": "./static/media/escrime.28cc715a58e5f9b0fa13.jpg",
+    "static/media/gymnastique.png": "./static/media/gymnastique.a5376d0580e96fece4ef.png",
+    "static/media/natation.avif": "./static/media/natation.e098e9de4e026581100e.avif",
+    "static/media/tennis.avif": "./static/media/tennis.a9c91f46de119e5cb4c1.avif",
+    "static/media/game.png": "./static/media/game.05f1e1db7fa36553ea90.png",
+    "static/media/game1.png": "./static/media/game1.0383f045c04f03918912.png",
+    "index.html": "./index.html",
+    "main.e8ba804f.css.map": "./static/css/main.e8ba804f.css.map",
+    "main.d6a3048d.js.map": "./static/js/main.d6a3048d.js.map",
+    "453.2295a44f.chunk.js.map": "./static/js/453.2295a44f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8ba804f.css",
+    "static/js/main.d6a3048d.js"
+  ]
+}

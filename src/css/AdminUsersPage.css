@@ -1,0 +1,220 @@
+body {
+    background-color: #f2f2f2; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.admin-card-container {
+    display: flex;
+    justify-content: center;
+    
+    margin-bottom: 20px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.admin-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    align-items: center;
+}
+
+.admin-card {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: 0 auto; 
+}
+
+.admin-user-search {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #f2f2f2;
+    background-color: #dadada;
+    padding: 5px;
+  
+}
+
+.admin-user-search::placeholder {
+    padding-left: 5px; 
+}
+
+.admin-card h2 {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-card-content {
+    display: none;
+
+}
+
+.admin-card-content.visible {
+    display: block;
+
+}
+
+.admin-user-item {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-user-header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 4px solid #6C8298;
+    border-bottom: none; 
+    background-color: #fffefe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 16px;  
+    border-top-right-radius: 16px; 
+}
+
+.user-info h4, .user-info p {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.user-info .user-email {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.admin-user-header button {
+    background-color: white;
+    font-size: medium;
+    color: red;
+    border: 2px solid red;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 45px;
+    margin-right: 10px;
+}
+
+.admin-user-header button:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+.achats-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #6C8298;
+    color: white;
+    border: 4px solid #6C8298;
+    border-top: none; 
+    border-bottom-left-radius: 16px;  
+    border-bottom-right-radius: 16px; 
+}
+
+.achats-header span {
+    margin: 0 5px;
+}
+
+.admin-user-details {
+    padding: 10px;
+    background-color: #ffffff;
+    border: 4px solid #6C8298;
+    border-top: none; 
+}
+
+.admin-user-details hr {
+    margin: 0px 10px 30px;
+}
+
+.admin-purchase-item {
+    margin-bottom: 10px;
+}
+
+.admin-purchase-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #295989;
+    color: white;
+    border-radius: 4px;
+}
+
+.purchase-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+.purchase-detail {
+    margin: 5px 0;
+}
+
+.qr-code-wrapper {
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.purchase-qr {
+    padding: 10px;
+}
+
+@media (max-width: 880px) {
+    .admin-card-container {
+        padding: 0 10px;
+    }
+
+    .admin-card {
+        padding: 15px;
+    }
+
+    .admin-user-header {
+        padding: 8px;
+    }
+
+    .admin-purchase-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .qr-code-wrapper {
+        align-self: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .admin-card-container {
+        justify-content: center;
+    }
+
+    .admin-card-wrapper {
+        align-items: center;
+    }
+
+    .admin-card {
+        margin: 0 20px; 
+    }
+}

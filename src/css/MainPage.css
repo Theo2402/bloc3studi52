@@ -27,7 +27,7 @@ body, html {
 
 .offer-container {
   max-width: 800px;
-  margin-bottom: 100px;
+  margin-bottom: 50px; 
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -37,7 +37,7 @@ body, html {
   text-align: left;
   margin-bottom: 10px;
   margin-right: 60vw;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .offer-card {

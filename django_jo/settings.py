@@ -139,22 +139,8 @@ else:
 
 
 
-
+# Developpement Heroku (mettre en commentaire pour les Tests)
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'd6o59a1vr7apit',
-    #     'USER': 'u368vaaq04pve0',
-    #     'PASSWORD': 'p90608fb7ca023c9d96b62ada42424823c71276389b6c36398c075db634402a44',
-    #     'HOST': 'ce0lkuo944ch99.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-    #     'PORT': '5432',
-    #      'OPTIONS': {
-    #         'sslmode': 'require',
-    #     },
-    # }
-
-
-
        'default': {
          'ENGINE': 'django.db.backends.postgresql',
          'USER': 'ubs9h052rggt2m',
@@ -241,6 +227,9 @@ SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
-DEBUG = True
+DEBUG = False
 
-
+import sys
+APPEND_SLASH = True 
+if 'test' in sys.argv:
+    SECURE_SSL_REDIRECT = False

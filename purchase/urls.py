@@ -5,7 +5,8 @@ from purchase.views import PurchaseViewSet
 from user.views import UpdateUserAPIView
 
 router = DefaultRouter()
-router.register(r'purchase', PurchaseViewSet, basename='purchase')
+#router.register(r'purchase', PurchaseViewSet, basename='purchase')
+router.register(r'', PurchaseViewSet, basename='purchase')
 
 urlpatterns = [
     path('', include(router.urls)),

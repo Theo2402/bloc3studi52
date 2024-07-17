@@ -5,8 +5,8 @@ from .views import MyTokenObtainPairView,RegisterUserAPIView
 from django.http import HttpResponse 
 
 router = DefaultRouter()
-router.register(r'', UserViewSet)  
-#router.register(r'user', UserViewSet, basename='user')  
+#router.register(r'', UserViewSet)  
+router.register(r'', UserViewSet, basename='user')  
 
 urlpatterns = [
     path('', include(router.urls)),

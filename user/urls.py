@@ -5,12 +5,12 @@ from .views import MyTokenObtainPairView,RegisterUserAPIView
 from django.http import HttpResponse 
 
 router = DefaultRouter()
-router.register(r'', UserViewSet)  
-#router.register(r'user', UserViewSet, basename='user')  
+#router.register(r'', UserViewSet)  
+router.register(r'user', UserViewSet, basename='user')  
 
 urlpatterns = [
     path('', include(router.urls)),
     path('register/', RegisterUserAPIView.as_view(), name='register'),  
-    #path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]
 

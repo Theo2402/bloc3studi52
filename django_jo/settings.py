@@ -140,7 +140,7 @@ else:
 
 
 
-DATABASES = {
+#DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': 'd6o59a1vr7apit',
@@ -155,15 +155,15 @@ DATABASES = {
 
 
 
-       'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'USER': 'ubs9h052rggt2m',
-         'PASSWORD': 'p459fc3862d6dc15e569eaa3e264768d034d1f3ce5e301706a25e97087f0d1ee0',
-         'HOST': 'c7u1tn6bvvsodf.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com',
-         'PORT': '5432',
-         'NAME': 'd412olpe262c9o',
-     }
-}
+       #'default': {
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'USER': 'ubs9h052rggt2m',
+        # 'PASSWORD': 'p459fc3862d6dc15e569eaa3e264768d034d1f3ce5e301706a25e97087f0d1ee0',
+        # 'HOST': 'c7u1tn6bvvsodf.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com',
+        # 'PORT': '5432',
+        #'NAME': 'd412olpe262c9o',
+     #}
+#}
 
 
 
@@ -234,3 +234,5 @@ HTTPS = config('HTTPS', default=False, cast=bool)
 django_heroku.settings(locals())
 
 DEBUG = True
+
+

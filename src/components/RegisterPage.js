@@ -107,7 +107,7 @@ const RegisterPage = () => {
     const user = { username, name, email, password };
     try {
       const response = await axios.post(`${API_BASE_URL}/api/register/`, user);
-      console.log('User registered:', response.data);
+      //console.log('User registered:', response.data);
       setNotification({ message: 'Registration successful! Redirecting to login...', type: 'success' });
       setTimeout(() => {
         navigate('/login', { replace: true });

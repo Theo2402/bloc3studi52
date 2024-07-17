@@ -8,6 +8,7 @@ from rest_framework import status
 from django.utils.crypto import get_random_string
 from .models import Purchase
 from .serializers import PurchaseSerializer
+from django.shortcuts import get_object_or_404
 
 class PurchaseViewSet(viewsets.ModelViewSet):
     queryset = Purchase.objects.all()
@@ -26,7 +27,8 @@ class PurchaseViewSet(viewsets.ModelViewSet):
             for offer in offers:
                 if 'id' not in offer:
                     return Response({"error": "Offer ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-
+                
+            
                 Purchase.objects.create(
                     user=user,
                     offer_id=offer['id'],

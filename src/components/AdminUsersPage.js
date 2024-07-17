@@ -17,7 +17,7 @@ const UsersPage = ({ users, purchases, setShowConfirmDialog, confirmDeleteUser, 
     }
   };
 
-  // Filtrer les username 'admin'
+  // Filtrer les usernames 'admin'
   const filteredUsers = users.filter(user =>
     user.username.toLowerCase() !== 'admin' && (
       user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

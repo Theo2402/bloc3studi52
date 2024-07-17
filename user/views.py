@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from django.contrib.auth import get_user_model
 from .serializers import UserSerializer
 from django.shortcuts import get_object_or_404
@@ -29,7 +29,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
         #token = CustomRefreshToken.for_user(user)
         print(token)
-        # Add custom claims
+        # Custom claims
         token['is_admin'] = user.is_staff 
         token['username'] = user.username
         return token
@@ -48,7 +48,7 @@ class UpdateUserAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def put(self, request, *args, **kwargs):
-        print(request.data)
+        #print(request.data)
         user = request.user
         serializer = UserSerializer(user, data=request.data, partial=True)
         if serializer.is_valid():
@@ -64,12 +64,12 @@ from .serializers import UserSerializer
 
 class RegisterUserAPIView(APIView):
     def post(self, request, *args, **kwargs):
-        print("Received data:", request.data)  # Log the incoming data
+        #print("Received data:", request.data)  # Incoming data
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
-            print("Errors:", serializer.errors)  # Log errors
+            print("Errors:", serializer.errors)  
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         

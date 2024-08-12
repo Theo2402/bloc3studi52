@@ -46,7 +46,7 @@ const Header = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const targetDate = new Date('2024-09-8T00:00:00');
+      const targetDate = new Date('2024-09-08T00:00:00');
       const now = new Date();
       const difference = targetDate - now;
 

@@ -1,6 +1,9 @@
 *.md
-tests/
 docs/
 .git/
-.venv/
+.vscode/
 node_modules/
+.pytest_cache/
+__pycache__/
+.ipynb_checkpoints/
+

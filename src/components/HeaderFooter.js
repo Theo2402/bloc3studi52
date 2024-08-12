@@ -92,7 +92,7 @@ const FooterBase = () => {
       <div className="icon-container">
         <img src={gameIcon} alt="Icon" className="icon" />
       </div>
-      <div className="right-text">24 juillet - 4 aout</div>
+      <div className="right-text">24 juillet - 8 septembre</div>
     </div>
   );
 };

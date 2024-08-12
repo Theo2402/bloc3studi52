@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="icon-container">
         <img src= {gameIcon} alt="Icon" className="icon" style={{ width: '40px', height: '40px' }} />
       </div>
-      <div className="right-text">26 juillet au 11 août 2024</div>
+      <div className="right-text">24 juillet - 8 septembre</div>
     </div>
   );
 };

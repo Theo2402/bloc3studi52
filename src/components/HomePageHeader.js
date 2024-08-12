@@ -46,7 +46,7 @@ const Header = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const targetDate = new Date('2024-07-26T00:00:00');
+      const targetDate = new Date('2024-09-8T00:00:00');
       const now = new Date();
       const difference = targetDate - now;
 
@@ -143,7 +143,7 @@ const Header = () => {
         </div>
       </div>
       <div className="countdown-container">
-        <p>Les Jeux Olympiques de Paris</p>
+        <p>Fin des Jeux Olympiques</p>
         <p className='countdown'>{countdown}</p>
         <div className="playPauseContainer">
           <button className="playPauseButton" onClick={handlePlayPause}>

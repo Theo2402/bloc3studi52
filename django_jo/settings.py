@@ -19,18 +19,15 @@ from decouple import config
 
 #env = environ.Env()
 #environ.Env.read_env()
-SECRET_KEY='django-insecure-5ftc@ot()mju46$sw5h#ar_d^3oe8=ym^3nky@uj=^9pe^$%5y'
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-#ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+
 AUTH_USER_MODEL = 'user.UserProfile'
 #ALLOWED_HOSTS = ['*'] 
 ALLOWED_HOSTS = ['bloc3exam-a2922cc2f685.herokuapp.com']
@@ -210,7 +207,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOW_ALL_ORIGINS = True
 
 SSL_CRT_FILE = config('SSL_CRT_FILE', default=None)
 SSL_KEY_FILE = config('SSL_KEY_FILE', default=None)

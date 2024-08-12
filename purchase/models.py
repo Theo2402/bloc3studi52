@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
 from django.utils.crypto import get_random_string
 from user.models import UserProfile
 from offer.models import Offer

@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../css/Cart.css';
 import { HeaderBase, FooterBase } from "./HeaderFooter";
 
-
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const getTotalQuantity = () => {
@@ -32,28 +31,24 @@ const Cart = () => {
   const checkout = async () => {
     const token = localStorage.getItem('access_token');
     if (!token) {
-      setMessage('Please log in to complete your purchase.');
+      setMessage('Veuillez vous connecter pour finaliser votre achat.');
       return;
     }
 
     try {
       const payload = cartItems.map(item => ({ id: item.id }));
-      //console.log("Payload being sent:", payload); 
-      //console.log("Access Token:", token);
-
       const response = await axios.post(`${API_BASE_URL}/api/purchase/purchase/`, payload, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
-      console.log("Checkout response:", response.data); 
-      setMessage('Purchase successful!');
+      setMessage('Achat réussi !');
       setCartItems([]);
       localStorage.removeItem('cart');
-      setTotalQuantity(0); // Reset quantite apres le paiement
+      setTotalQuantity(0); // Reset quantite apres paiement
     } catch (error) {
       console.error('Error during checkout:', error.response ? error.response.data : error);
-      setMessage('Checkout failed. Please try again.');
+      setMessage('Le paiement a échoué. Veuillez réessayer.');
     }
   };
 
@@ -66,40 +61,39 @@ const Cart = () => {
         <div className="cart-page">
           <h1>Panier</h1>
           {message && <p>{message}</p>}
-          <p>Vous avez {cartItems.length} objets dans votre panier.</p>
           {cartItems.length === 0 ? (
             <p>Votre panier est vide.</p>
           ) : (
-            <div className="cart-items">
-              {cartItems.map(item => (
-                <div key={item.id} className="cart-item">
-                  <div className="item-info">
-                    <img src={item.image} alt={item.title} className="item-image" />
-                    <div>
-                      <h4>{item.title}</h4>
-                      <p>Description: {item.description}</p>
+            <>
+              <p>Vous avez {cartItems.length} objets dans votre panier.</p>
+              <div className="cart-items">
+                {cartItems.map(item => (
+                  <div key={item.id} className="cart-item">
+                    <div className="item-info">
+                      <div>
+                        <h4>{item.title}</h4>
+                        <p>Description: {item.description}</p>
+                      </div>
+                    </div>
+                    <div className="item-controls">
+                      <button onClick={() => removeFromCart(item.id)}>✕</button>
+                      <p>{parseFloat(item.price).toFixed(2)}€</p>
                     </div>
                   </div>
-                  <div className="item-controls">
-                    <button onClick={() => removeFromCart(item.id)}>✕</button>
-                    <p>{parseFloat(item.price).toFixed(2)}€</p>
-                  </div>
+                ))}
+              </div>
+              <div className="cart-summary">
+                <div className="summary-item">
+                  <span>Sous-total</span>
+                  <span>{totalPrice}€</span>
                 </div>
-              ))}
-            </div>
-          )}
-          {cartItems.length > 0 && (
-            <div className="cart-summary">
-              <div className="summary-item">
-                <span>Sous-total</span>
-                <span>{totalPrice}€</span>
+                <div className="summary-item">
+                  <span>Total</span>
+                  <span>{totalPrice}€</span>
+                </div>
+                <button onClick={checkout}>Acheter</button>
               </div>
-              <div className="summary-item">
-                <span>Total</span>
-                <span>{totalPrice}€</span>
-              </div>
-              <button onClick={checkout}>Acheter</button>
-            </div>
+            </>
           )}
         </div>
       </div>
@@ -109,6 +103,7 @@ const Cart = () => {
 };
 
 export default Cart;
+
 
 
 

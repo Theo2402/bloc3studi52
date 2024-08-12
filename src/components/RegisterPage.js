@@ -47,7 +47,7 @@ const RegisterPage = () => {
           setIsUsernameTaken(response.data.isTaken);
           setIsCheckingUsername(false);
           if (response.data.isTaken) {
-            setErrors(prevErrors => ({ ...prevErrors, username: 'Username is already taken' }));
+            setErrors(prevErrors => ({ ...prevErrors, username: 'Nom d\'utilisateur déjà pris' }));
           } else {
             setErrors(prevErrors => {
               const { username, ...rest } = prevErrors;
@@ -108,7 +108,7 @@ const RegisterPage = () => {
     try {
       const response = await axios.post(`${API_BASE_URL}/api/register/`, user);
       //console.log('User registered:', response.data);
-      setNotification({ message: 'Registration successful! Redirecting to login...', type: 'success' });
+      setNotification({ message: 'Inscription réussi! Redirection vers la connexion...', type: 'success' });
       setTimeout(() => {
         navigate('/login', { replace: true });
       }, 3000);

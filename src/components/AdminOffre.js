@@ -3,7 +3,7 @@ import '../css/AdminOffre.css';
 import trashIcon from '../icons/trash.png';
 import ModalAdmin from './ModalAdmin';
 
-const AdminOffer = ({ offers, setOffers, newOffer, setNewOffer, handleAddOffer, handleDeleteOffer, showPreview, setShowPreview }) => {
+const AdminOffer = ({ offers, setOffers, newOffer, setNewOffer, handleAddOffer, handleDeleteOffer }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState(null);
 
@@ -52,58 +52,9 @@ const AdminOffer = ({ offers, setOffers, newOffer, setNewOffer, handleAddOffer, 
                 required
               />
               <div className="button-container">
-                <button className="preview" type="button" onClick={() => setShowPreview(true)}>Preview</button>
                 <button className="add-offer" type="submit">Add Offer</button>
               </div>
             </form>
-            {showPreview && (
-              <div className="offer-preview">
-                <div className="iframe-container">
-                  <iframe
-                    title="Offer Preview"
-                    className="iframe-preview"
-                    srcDoc={`
-                      <!DOCTYPE html>
-                      <html lang="en">
-                      <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <link rel="stylesheet" href="../css/iframePreview.css">
-                      </head>
-                      <body>
-                        <div class="mainpage-background">
-                          <div class="offer-section">
-                            <h1 class="offer-title">Ticket Offers</h1>
-                            <div class="offer-container">
-                              <div class="offer-card">
-                                <div class="offer-card-content">
-                                  <div class="offer-title-description">
-                                    <h3>${newOffer.title}</h3>
-                                    <p class="offer-description">${newOffer.description}</p>
-                                  </div>
-                                  <div class="offer-divider"></div>
-                                  <div class="offer-price-quantity">
-                                    <p class="offer-price">${parseFloat(newOffer.price).toFixed(2)}€</p>
-                                    <div class="quantity-controls-wrapper">
-                                      <button class="subtract" disabled>-</button>
-                                      <input type="number" value="0" disabled />
-                                      <button class="add" disabled>+</button>
-                                    </div>
-                                    <button class="add-to-basket" disabled>Add to Cart</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </body>
-                      </html>
-                    `}
-                  />
-                  <button className="close-iframe" onClick={() => setShowPreview(false)}>X</button>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

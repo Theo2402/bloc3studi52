@@ -99,7 +99,7 @@ const MainPage = () => {
             </div>
           ))}
         </div>
-        {showPopup && <Popup message="Item successfully added to your basket" />}
+        {showPopup && <Popup message="Article ajouté avec succès à votre panier" />}
       </div>
       <FooterBase />
     </div>

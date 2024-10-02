@@ -1,3 +1,5 @@
+
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Header.css'; 
@@ -39,25 +41,43 @@ const Header = () => {
     if (isPlaying) {
       intervalId = setInterval(() => {
         setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-      }, 6000); // Changer images toute les 6 seconds
+      }, 6000); //Changer images toutes les 6 seconds
     }
     return () => clearInterval(intervalId);
   }, [isPlaying, backgroundImages.length]);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const targetDate = new Date('2024-09-08T00:00:00');
+    const targetDate = new Date('2024-09-08T00:00:00');
+
+    const updateCountdown = () => {
       const now = new Date();
       const difference = targetDate - now;
+
+      if (difference <= 0) {
+        setCountdown('00j 00h 00m 00s');
+        clearInterval(intervalId);
+        return;
+      }
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-      const countdownString = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+     
+      const formattedDays = String(days).padStart(2, '0');
+      const formattedHours = String(hours).padStart(2, '0');
+      const formattedMinutes = String(minutes).padStart(2, '0');
+      const formattedSeconds = String(seconds).padStart(2, '0');
+
+      const countdownString = `${formattedDays}j ${formattedHours}h ${formattedMinutes}m ${formattedSeconds}s`;
       setCountdown(countdownString);
-    }, 1000);
+    };
+
+    
+    updateCountdown();
+
+    const intervalId = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -98,7 +118,7 @@ const Header = () => {
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
     if (!isPlaying) {
-      // remet a zero la barre
+      // Reset progress bar
       setProgressKey((prevKey) => prevKey + 1);
     }
   };
@@ -115,7 +135,7 @@ const Header = () => {
       <div className="content" ref={contentRef}>
         <div ref={descriptionRef} className={`description ${isDescriptionExpanded ? 'expanded' : ''}`}>
           <p>
-          Bienvenue aux Jeux Olympiques de Paris 2024 ! Du 26 juillet au 11 août, la Ville Lumière accueillera le monde entier pour célébrer l'excellence sportive et l'esprit olympique. Découvrez des performances incroyables, vivez des moments d'émotion intense et partagez des souvenirs inoubliables dans des sites emblématiques de Paris. Rejoignez-nous pour cette aventure extraordinaire où l'histoire et l'innovation se rencontrent pour créer des Jeux uniques et inoubliables.
+            Bienvenue aux Jeux Olympiques de Paris 2024 ! Du 26 juillet au 11 août, la Ville Lumière accueillera le monde entier pour célébrer l'excellence sportive et l'esprit olympique. Découvrez des performances incroyables, vivez des moments d'émotion intense et partagez des souvenirs inoubliables dans des sites emblématiques de Paris. Rejoignez-nous pour cette aventure extraordinaire où l'histoire et l'innovation se rencontrent pour créer des Jeux uniques et inoubliables.
           </p>
         </div>
         <div className="navigation" style={{ top: `${navigationTop}px` }}>

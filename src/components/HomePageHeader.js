@@ -1,5 +1,3 @@
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Header.css'; 
@@ -41,7 +39,7 @@ const Header = () => {
     if (isPlaying) {
       intervalId = setInterval(() => {
         setCurrentBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-      }, 6000); //Changer images toutes les 6 seconds
+      }, 6000); // Changer images toutes les 6 secondes
     }
     return () => clearInterval(intervalId);
   }, [isPlaying, backgroundImages.length]);
@@ -49,13 +47,15 @@ const Header = () => {
   useEffect(() => {
     const targetDate = new Date('2024-09-08T00:00:00');
 
+    let intervalId; 
+
     const updateCountdown = () => {
       const now = new Date();
       const difference = targetDate - now;
 
       if (difference <= 0) {
         setCountdown('00j 00h 00m 00s');
-        clearInterval(intervalId);
+        clearInterval(intervalId); 
         return;
       }
 
@@ -64,7 +64,6 @@ const Header = () => {
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-     
       const formattedDays = String(days).padStart(2, '0');
       const formattedHours = String(hours).padStart(2, '0');
       const formattedMinutes = String(minutes).padStart(2, '0');
@@ -74,10 +73,10 @@ const Header = () => {
       setCountdown(countdownString);
     };
 
-    
+  
     updateCountdown();
 
-    const intervalId = setInterval(updateCountdown, 1000);
+    intervalId = setInterval(updateCountdown, 1000); 
 
     return () => clearInterval(intervalId);
   }, []);
@@ -118,7 +117,7 @@ const Header = () => {
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
     if (!isPlaying) {
-      // Reset progress bar
+      // Reset barre de progression
       setProgressKey((prevKey) => prevKey + 1);
     }
   };
@@ -182,5 +181,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
